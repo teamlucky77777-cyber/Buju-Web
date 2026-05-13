@@ -127,9 +127,9 @@ nav{
 /* ── STICKY SIDEBAR LAYOUT ── */
 .page-layout{display:grid;grid-template-columns:1fr 380px;min-height:100vh;align-items:start}
 .page-main{min-width:0}
-.page-sidebar{border-left:1px solid var(--gb);position:sticky;top:70px;height:calc(100vh - 70px);display:flex;flex-direction:column}
-.page-sidebar .hero-gamelist{flex:1;display:flex;flex-direction:column;border:none;height:100%}
-.page-sidebar .hgl-item{flex:1}
+.page-sidebar{border-left:1px solid var(--gb);position:sticky;top:70px;display:flex;flex-direction:column}
+.page-sidebar .hero-gamelist{display:flex;flex-direction:column;border:none}
+.page-sidebar .hgl-foot{}
 
 /* ── HERO — full viewport ── */
 .hero{
@@ -1036,27 +1036,11 @@ footer{
   <div class="hero-gamelist">
     <div class="hgl-head">
       <span class="hgl-label">지원 게임</span>
-      <span class="hgl-count">05</span>
+      <span class="hgl-count">01</span>
     </div>
-    <div class="hgl-item sb-game-btn" data-game="lol">
-      <div class="hgl-left"><span class="hgl-name">리그 오브 레전드</span><span class="hgl-tags">솔로 · 듀오 · 배치고사 · 챔피언</span></div>
+    <div class="hgl-item sb-game-btn" data-game="lineage">
+      <div class="hgl-left"><span class="hgl-name">리니지 클래식</span><span class="hgl-tags">레벨 부스팅 · 아데나 파밍 · 아이템 파밍 · 공성전</span></div>
       <div class="hgl-right"><span class="hgl-badge">HOT</span><span class="hgl-arr">→</span></div>
-    </div>
-    <div class="hgl-item sb-game-btn" data-game="val">
-      <div class="hgl-left"><span class="hgl-name">발로란트</span><span class="hgl-tags">랭크 · 배치고사 · 에이전트 지정</span></div>
-      <div class="hgl-right"><span class="hgl-badge">HOT</span><span class="hgl-arr">→</span></div>
-    </div>
-    <div class="hgl-item sb-game-btn" data-game="ow">
-      <div class="hgl-left"><span class="hgl-name">오버워치 2</span><span class="hgl-tags">랭크 · 역할 지정</span></div>
-      <div class="hgl-right"><span class="hgl-badge new">NEW</span><span class="hgl-arr">→</span></div>
-    </div>
-    <div class="hgl-item sb-game-btn" data-game="tft">
-      <div class="hgl-left"><span class="hgl-name">TFT</span><span class="hgl-tags">랭크 · 배치고사</span></div>
-      <div class="hgl-right"><span class="hgl-arr">→</span></div>
-    </div>
-    <div class="hgl-item sb-game-btn" data-game="pubg">
-      <div class="hgl-left"><span class="hgl-name">배틀그라운드</span><span class="hgl-tags">랭크 · KDA 향상</span></div>
-      <div class="hgl-right"><span class="hgl-arr">→</span></div>
     </div>
     <div class="hgl-foot">
       <span class="hgl-foot-note">가격 문의는 디스코드에서 빠르게 답변드립니다</span>
@@ -1109,11 +1093,7 @@ document.querySelectorAll('a[href="#"]').forEach(a => {
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
 const gd={
-  lol:{tag:'리그 오브 레전드',ttl:'리그 오브 레전드',desc:'리그 오브 레전드 대리 서비스. 챌린저급 부스터 직접 플레이. 노출 방지 기본 제공.',svcs:[{n:'솔로 랭크 부스팅',s:'아이언 ~ 마스터',t:'12–48h'},{n:'듀오 랭크',s:'함께 직접 플레이',t:'24–72h'},{n:'배치고사',s:'시즌 초 최상위',t:'6–12h'},{n:'챔피언 지정',s:'원하는 챔피언만',t:'협의'}],hls:[{i:'🏆',t:'챌린저 부스터',d:'검증된 최상위만'},{i:'👁',t:'노출 방지',d:'오프라인 기본 적용'},{i:'⚡',t:'빠른 시작',d:'30분 이내'},{i:'↩',t:'환불 보장',d:'미달 시 무료 재진행'}]},
-  val:{tag:'발로란트',ttl:'발로란트',desc:'발로란트 랭크 부스팅. 래디언트 전문 부스터 배정.',svcs:[{n:'랭크 부스팅',s:'아이언 ~ 임모탈',t:'12–36h'},{n:'배치고사',s:'5승 보장',t:'3–8h'},{n:'듀오 부스팅',s:'함께 플레이',t:'24–60h'},{n:'에이전트 지정',s:'원하는 에이전트',t:'협의'}],hls:[{i:'🎯',t:'래디언트 부스터',d:'현역 배정'},{i:'🛡',t:'계정 안전',d:'VPN 보호'},{i:'📱',t:'실시간 알림',d:'카톡 업데이트'},{i:'✅',t:'승률 보장',d:'55% 이상'}]},
-  ow:{tag:'오버워치 2',ttl:'오버워치 2',desc:'오버워치 2 랭크 부스팅. GM 이상 부스터. 역할 지정 가능.',svcs:[{n:'랭크 부스팅',s:'브론즈 ~ 마스터',t:'24–60h'},{n:'배치고사',s:'시즌 최상위',t:'8–16h'},{n:'역할 지정',s:'탱/딜/힐',t:'협의'}],hls:[{i:'💪',t:'GM+ 부스터',d:'그랜드마스터 이상'},{i:'🎮',t:'역할 지정',d:'원하는 역할'},{i:'🔒',t:'계정 보안',d:'VPN 적용'},{i:'📊',t:'실시간 보고',d:'매 게임 업데이트'}]},
-  tft:{tag:'TFT',ttl:'TFT',desc:'TFT 랭크 부스팅. GM급 부스터, 최신 메타.',svcs:[{n:'랭크 부스팅',s:'아이언 ~ 마스터',t:'12–48h'},{n:'배치고사',s:'시즌 최상위',t:'4–10h'}],hls:[{i:'♟',t:'최신 메타',d:'최강 메타 적용'},{i:'🥇',t:'GM 부스터',d:'그랜드마스터 이상'},{i:'⏱',t:'빠른 완료',d:'빠른 클리어'},{i:'🔄',t:'재진행 보장',d:'미달 시 무료'}]},
-  pubg:{tag:'배틀그라운드',ttl:'배틀그라운드',desc:'배틀그라운드 랭크 및 KDA 향상 서비스.',svcs:[{n:'랭크 부스팅',s:'브론즈 ~ 플래티넘',t:'24–72h'},{n:'배치고사',s:'시즌 최상위',t:'6–12h'}],hls:[{i:'🎯',t:'고수 부스터',d:'마스터 이상'},{i:'🌏',t:'서버 지정',d:'아시아 전문'},{i:'📈',t:'KDA 향상',d:'목표 달성'},{i:'💬',t:'24/7 소통',d:'카카오톡'}]}
+  lineage:{tag:'리니지 클래식',ttl:'리니지 클래식 (1998)',desc:'리니지 클래식 전문 대리 서비스. 숙련된 고수 플레이어가 직접 진행. 안전하고 빠른 결과 보장.',svcs:[{n:'레벨 부스팅',s:'원하는 레벨까지',t:'협의'},{n:'아데나 파밍',s:'대량 아데나 획득',t:'협의'},{n:'아이템 파밍',s:'희귀 아이템 사냥',t:'협의'},{n:'공성전 지원',s:'혈맹 공성전 참여',t:'협의'}],hls:[{i:'⚔️',t:'숙련 플레이어',d:'리니지 전문 고수'},{i:'🛡',t:'계정 안전',d:'보안 철저 준수'},{i:'💬',t:'실시간 소통',d:'카카오톡 업데이트'},{i:'↩',t:'완료 보장',d:'미달 시 무료 재진행'}]}
 };
 const mo=document.getElementById('mo'),gm=document.getElementById('gm');
 function openM(k){const d=gd[k];if(!d)return;document.getElementById('gmTag').textContent=d.tag;document.getElementById('gmTtl').textContent=d.ttl;document.getElementById('gmB').innerHTML=`<p class="gm-desc">${d.desc}</p><div class="gm-sl">제공 서비스</div><div class="gm-svcs">${d.svcs.map(s=>`<div class="gm-sr"><div><div class="gm-sn">${s.n}</div><div class="gm-ss">${s.s}</div></div><div class="gm-st">${s.t}</div></div>`).join('')}</div><div class="gm-sl" style="margin-top:22px">주요 특징</div><div class="gm-hg">${d.hls.map(h=>`<div class="gm-hi"><div class="gm-hi-ic">${h.i}</div><div class="gm-hi-t">${h.t}</div><div class="gm-hi-d">${h.d}</div></div>`).join('')}</div>`;mo.classList.add('open');gm.classList.add('open');document.body.style.overflow='hidden';}
