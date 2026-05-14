@@ -3,1035 +3,862 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>부주마켓</title>
-<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzlmNWNmNyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMDQwZmIiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxwYXRoIGQ9Ik0xNiAxIEwzMSAxNiBMMTYgMzEgTDEgMTYgWiIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KICA8cGF0aCBkPSJNOSAyMCBMMTYgMTEgTDIzIDIwIiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KICA8cGF0aCBkPSJNOSAyNSBMMTYgMTYgTDIzIDI1IiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIiBvcGFjaXR5PSIwLjQiLz4KPC9zdmc+">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMzIiIGZpbGw9IiMwYjBiMGYiLz48dGV4dCB4PSIzMiIgeT0iMzQiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjYzk5NjNhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+67aA7KO8PC90ZXh0Pjwvc3ZnPg==">
+<title>부주마켓 — 리니지 클래식 전문 대리 서비스</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;600;700;800&family=Noto+Sans+KR:wght@100;300;400;700;900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#06050f;
-  --bg1:#0c0a1c;
-  --bg2:#11102a;
-  --glass:rgba(255,255,255,0.03);
-  --glass2:rgba(255,255,255,0.06);
-  --gb:rgba(255,255,255,0.08);
-  --gb2:rgba(255,255,255,0.14);
-  --v:#7c3aed;
-  --v2:#9f5cf7;
-  --vl:rgba(124,58,237,0.18);
-  --vb:rgba(124,58,237,0.08);
-  --mg:#e040fb;
-  --cyan:#00e5ff;
-  --w:#f0ecff;
-  --w2:#b8b0d4;
-  --dim:#564e78;
-  --ox:'Oxanium',sans-serif;
-  --kr:'Noto Sans KR',sans-serif;
-  --mono:'JetBrains Mono',monospace;
+  --bg:    #0b0b0f;
+  --bg1:   #111118;
+  --bg2:   #18181f;
+  --bg3:   #1e1e28;
+  --gold:  #c9963a;
+  --gold2: #e8b455;
+  --goldf: rgba(201,150,58,.1);
+  --goldb: rgba(201,150,58,.18);
+  --w:     #ffffff;
+  --w2:    #b0adb8;
+  --w3:    #706d7a;
+  --border:rgba(255,255,255,.07);
+  --border2:rgba(255,255,255,.12);
+  --syne:'Syne',sans-serif;
+  --inter:'Inter',sans-serif;
 }
 html{font-size:16px;scroll-behavior:smooth}
 body{
   background:var(--bg);
   color:var(--w);
-  font-family:var(--kr);font-weight:300;
+  font-family:var(--inter);
+  font-weight:400;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
-  line-height:1.6;
 }
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 
-/* ── BG GRADIENT ── */
+/* ── SUBTLE BG ── */
 body::before{
   content:'';
-  position:fixed;inset:0;
+  position:fixed;inset:0;z-index:0;
   background:
-    radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,58,237,.18) 0%,transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 100%,rgba(224,64,251,.1) 0%,transparent 60%),
-    radial-gradient(ellipse 40% 30% at 50% 50%,rgba(0,229,255,.04) 0%,transparent 60%);
-  pointer-events:none;z-index:0;
-}
-
-/* subtle hex grid */
-body::after{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52' viewBox='0 0 60 52'%3E%3Cpolygon points='30,1 59,17 59,35 30,51 1,35 1,17' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='0.5'/%3E%3C/svg%3E");
-  background-size:60px 52px;
-  opacity:.6;
+    radial-gradient(ellipse 60% 50% at 10% 20%, rgba(201,150,58,.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 90% 80%, rgba(120,80,180,.04) 0%, transparent 60%);
+  pointer-events:none;
 }
 
 /* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  height:70px;
+  height:64px;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 40px;
-  border-bottom:1px solid var(--gb);
-  background:rgba(6,5,15,.8);
-  backdrop-filter:blur(24px);
-}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-svg{flex-shrink:0;filter:drop-shadow(0 0 6px rgba(124,58,237,.4))}
-.brand-name{
-  font-family:var(--ox);font-size:22px;font-weight:700;
-  letter-spacing:1px;color:var(--w);
-}
-.brand-name em{
-  font-style:normal;
-  background:linear-gradient(90deg,var(--v2),var(--mg));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.nav-links{display:flex;gap:0}
-.nav-links a{
-  font-family:var(--mono);font-size:13px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--w2);padding:0 20px;height:70px;
-  display:flex;align-items:center;
-  transition:color .2s;position:relative;
-}
-.nav-links a::after{
-  content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;
-  background:linear-gradient(90deg,var(--v),var(--mg));
-  transform:translateX(-50%);transition:width .25s;
-}
-.nav-links a:hover{color:var(--w)}
-.nav-links a:hover::after{width:60%}
-.nav-right{display:flex;align-items:center;gap:14px}
-.nav-status{
-  font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--dim);display:flex;align-items:center;gap:8px;
-}
-.ns-dot{
-  width:7px;height:7px;border-radius:50%;
-  background:var(--cyan);box-shadow:0 0 8px var(--cyan);
-  animation:glow-c 2s ease-in-out infinite;
-}
-@keyframes glow-c{0%,100%{box-shadow:0 0 4px var(--cyan)}50%{box-shadow:0 0 14px var(--cyan),0 0 28px rgba(0,229,255,.2)}}
-.nav-btn{
-  font-family:var(--ox);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  color:#fff;padding:12px 28px;
-  background:linear-gradient(135deg,var(--v),var(--mg));
-  position:relative;overflow:hidden;
-  transition:transform .15s,box-shadow .2s;
-}
-.nav-btn::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,var(--mg),var(--v));
-  opacity:0;transition:opacity .3s;
-}
-.nav-btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(124,58,237,.4)}
-.nav-btn:hover::before{opacity:1}
-.nav-btn span{position:relative;z-index:1}
-
-/* ── STICKY SIDEBAR LAYOUT ── */
-.page-layout{display:grid;grid-template-columns:1fr 380px;min-height:100vh;align-items:start}
-.page-main{min-width:0}
-.page-sidebar{border-left:1px solid var(--gb);position:sticky;top:70px;display:flex;flex-direction:column}
-.page-sidebar .hero-gamelist{display:flex;flex-direction:column;border:none}
-.page-sidebar .hgl-foot{}
-
-/* ── HERO — full viewport ── */
-.hero{
-  min-height:calc(100vh - 70px);
-  display:flex;flex-direction:column;justify-content:center;
-  padding:80px 60px 60px;
-  position:relative;z-index:1;
-}
-.hero-left{
-  display:flex;flex-direction:column;align-items:flex-start;
-  text-align:left;max-width:680px;
-}
-.hero-right-panel{display:none}
-
-.hero-chip{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--w2);
-  border:1px solid var(--gb2);background:var(--glass2);
-  padding:6px 16px;border-radius:100px;
-  backdrop-filter:blur(10px);
-  margin-bottom:40px;
-}
-.chip-dot{
-  width:5px;height:5px;background:var(--v2);border-radius:50%;
-  box-shadow:0 0 6px var(--v2);
-  animation:glow-v 1.8s ease-in-out infinite;
-}
-@keyframes glow-v{0%,100%{box-shadow:0 0 4px var(--v2)}50%{box-shadow:0 0 12px var(--v2),0 0 24px rgba(159,92,247,.3)}}
-
-.hero-title{
-  font-family:var(--kr);font-weight:900;
-  font-size:clamp(64px,13vw,190px);
-  line-height:.85;letter-spacing:-5px;
-  background:linear-gradient(160deg,#fff 0%,rgba(180,160,255,.9) 50%,rgba(224,64,251,.7) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  margin-bottom:24px;
-}
-.hero-sub{
-  font-family:var(--ox);font-size:clamp(14px,2vw,20px);font-weight:200;
-  color:var(--w2);letter-spacing:4px;text-transform:uppercase;
-  margin-bottom:48px;
-}
-.hero-sub em{
-  font-style:normal;
-  background:linear-gradient(90deg,var(--v2),var(--mg));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  font-weight:600;
-}
-
-.hero-desc{
-  font-size:15px;line-height:1.9;color:var(--w2);
-  max-width:560px;margin:0 auto 52px;font-weight:300;
-}
-.hero-desc strong{color:var(--w);font-weight:400}
-
-.hero-actions{
-  display:flex;gap:16px;flex-wrap:wrap;justify-content:center;
-  margin-bottom:80px;
-}
-.btn-v{
-  display:inline-flex;align-items:center;gap:12px;
-  font-family:var(--ox);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  color:#fff;padding:14px 32px;
-  background:linear-gradient(135deg,var(--v),var(--v2));
-  position:relative;overflow:hidden;
-  transition:transform .2s,box-shadow .2s;
-}
-.btn-v::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--mg),var(--v));opacity:0;transition:opacity .3s}
-.btn-v:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,.5)}
-.btn-v:hover::before{opacity:1}
-.btn-v span{position:relative;z-index:1;display:flex;align-items:center;gap:12px}
-.btn-g{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:var(--ox);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  color:var(--w);padding:14px 28px;
-  background:var(--glass2);
-  border:1px solid var(--gb2);
-  backdrop-filter:blur(10px);
-  transition:all .2s;
-}
-.btn-g:hover{background:var(--vb);border-color:var(--v)}
-
-/* Hero game cards */
-.hero-games{
-  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
-  width:100%;max-width:900px;
-}
-.hg-card{
-  flex:1;min-width:140px;max-width:180px;
-  background:var(--glass2);
-  border:1px solid var(--gb);
-  backdrop-filter:blur(16px);
-  padding:20px 16px;
-  cursor:pointer;
-  transition:all .25s;
-  position:relative;overflow:hidden;
-}
-.hg-card::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(224,64,251,.08));
-  opacity:0;transition:opacity .3s;
-}
-.hg-card::after{
-  content:'';position:absolute;
-  bottom:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--v),var(--mg));
-  transform:scaleX(0);transition:transform .3s;
-}
-.hg-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(124,58,237,.5);
-  box-shadow:0 16px 40px rgba(124,58,237,.2);
-}
-.hg-card:hover::before{opacity:1}
-.hg-card:hover::after{transform:scaleX(1)}
-.hg-num{
-  font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--dim);
-  margin-bottom:16px;display:flex;align-items:center;gap:8px;
-}
-.hg-num::after{content:'';flex:1;height:1px;background:var(--gb)}
-.hg-name{
-  font-family:var(--kr);font-weight:700;font-size:15px;
-  color:var(--w);line-height:1.2;margin-bottom:4px;
-  letter-spacing:.2px;
-}
-.hg-tag{
-  font-family:var(--mono);font-size:8px;letter-spacing:1px;
-  color:var(--v2);
-}
-.hg-badge{
-  position:absolute;top:8px;right:8px;
-  font-family:var(--mono);font-size:7px;letter-spacing:1px;text-transform:uppercase;
-  padding:2px 6px;
-  background:linear-gradient(135deg,var(--v),var(--mg));
-  color:#fff;
-}
-
-/* ── STATS STRIP ── */
-.stats-strip{
-  position:relative;z-index:1;
-  display:grid;grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--gb);
-  border-bottom:1px solid var(--gb);
-  background:rgba(6,5,15,.6);backdrop-filter:blur(20px);
-}
-.stat-cell{
-  padding:28px 40px;
-  border-right:1px solid var(--gb);
-  position:relative;overflow:hidden;
-}
-.stat-cell:last-child{border-right:none}
-.stat-cell::before{
-  content:'';position:absolute;
-  top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--v),var(--mg));
-  opacity:0;transition:opacity .3s;
-}
-.stat-cell:hover::before{opacity:1}
-.sc-val{
-  font-family:var(--ox);font-size:42px;font-weight:700;
-  color:var(--w);line-height:1;margin-bottom:10px;
-  background:linear-gradient(135deg,#fff,var(--w2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.sc-val em{
-  font-style:normal;font-size:22px;
-  background:linear-gradient(90deg,var(--v2),var(--mg));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.sc-label{
-  font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--w2);
-}
-
-/* ── 서비스 ── */
-.section{
-  position:relative;z-index:1;
-  padding:80px 40px;
-}
-.section-head{
-  display:flex;align-items:flex-end;justify-content:space-between;
-  margin-bottom:48px;
-}
-.sh-l{}
-.sh-eyebrow{
-  font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;
-  margin-bottom:10px;
-  background:linear-gradient(90deg,var(--v2),var(--mg));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.sh-title{
-  font-family:var(--ox);font-size:clamp(32px,4vw,52px);
-  font-weight:700;color:var(--w);letter-spacing:-1px;line-height:1;
-}
-.sh-r{
-  font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:1px;
-  text-align:right;line-height:1.8;
-}
-
-/* Service cards — glass panels */
-.svc-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-.svc-card{
-  background:var(--glass);
-  border:1px solid var(--gb);
-  backdrop-filter:blur(16px);
-  padding:28px;
-  position:relative;overflow:hidden;
-  transition:all .25s;
-}
-.svc-card:hover{
-  background:var(--vb);
-  border-color:rgba(124,58,237,.4);
-  transform:translateY(-4px);
-  box-shadow:0 12px 40px rgba(124,58,237,.15);
-}
-.svc-card.featured{
-  grid-column:span 2;
-  background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(224,64,251,.06));
-  border-color:rgba(124,58,237,.3);
-}
-.svc-card.featured:hover{
-  border-color:rgba(124,58,237,.6);
-  box-shadow:0 16px 48px rgba(124,58,237,.25);
-}
-/* corner glow */
-.svc-card::before{
-  content:'';position:absolute;
-  top:-40px;right:-40px;width:120px;height:120px;
-  background:radial-gradient(circle,rgba(124,58,237,.12),transparent 70%);
-  opacity:0;transition:opacity .3s;
-}
-.svc-card:hover::before{opacity:1}
-
-.sc-tag{
-  font-family:var(--mono);font-size:8px;letter-spacing:2px;text-transform:uppercase;
-  padding:3px 9px;margin-bottom:14px;display:inline-block;
-  border:1px solid;
-}
-.lol-t{color:#c89b3c;border-color:rgba(200,155,60,.3);background:rgba(200,155,60,.08)}
-.val-t{color:#ff5c7a;border-color:rgba(255,92,122,.3);background:rgba(255,92,122,.07)}
-.ow-t{color:#f97316;border-color:rgba(249,115,22,.3);background:rgba(249,115,22,.07)}
-.tft-t{color:var(--v2);border-color:rgba(159,92,247,.3);background:rgba(159,92,247,.07)}
-.svc-name{
-  font-family:var(--ox);font-size:17px;font-weight:600;
-  color:var(--w);margin-bottom:6px;letter-spacing:.3px;
-  display:flex;align-items:center;gap:8px;
-}
-.svc-card.featured .svc-name{font-size:22px}
-.svc-pop{
-  font-family:var(--mono);font-size:8px;letter-spacing:1px;
-  background:linear-gradient(90deg,var(--v),var(--mg));
-  color:#fff;padding:2px 7px;
-  animation:shimmer 3s ease-in-out infinite;
-}
-@keyframes shimmer{0%,100%{opacity:1}50%{opacity:.6}}
-.svc-sub{font-size:12px;color:var(--dim);margin-bottom:16px;letter-spacing:.3px}
-.svc-desc{font-size:15px;line-height:1.8;color:var(--w2);margin-bottom:20px;font-weight:300}
-.svc-footer{
-  display:flex;justify-content:space-between;align-items:center;
-  padding-top:16px;border-top:1px solid var(--gb);
-}
-.sf-time{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:1px}
-.sf-price{
-  font-family:var(--ox);font-size:18px;font-weight:600;
-  background:linear-gradient(90deg,var(--w),var(--w2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.sf-price.inq{
-  font-family:var(--mono);font-size:11px;
-  background:linear-gradient(90deg,var(--v2),var(--mg));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  letter-spacing:2px;text-transform:uppercase;
-  font-weight:400;
-}
-
-/* ── 진행방식 ── */
-.proc-section{
-  position:relative;z-index:1;
-  padding:80px 40px;
-  background:rgba(6,5,15,.6);
-  border-top:1px solid var(--gb);border-bottom:1px solid var(--gb);
+  padding:0 48px;
+  background:rgba(11,11,15,.85);
+  border-bottom:1px solid var(--border);
   backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
 }
-.proc-steps{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
-  margin-top:48px;
+.brand{
+  font-family:var(--syne);
+  font-size:18px;font-weight:800;
+  letter-spacing:-.02em;
+  color:var(--w);
+  display:flex;align-items:center;gap:10px;
+}
+.brand-dot{
+  width:8px;height:8px;
+  background:var(--gold);
+  border-radius:50%;
+  box-shadow:0 0 10px var(--gold);
+}
+.brand em{color:var(--gold);font-style:normal}
+.nav-links{display:flex;gap:2px}
+.nav-links a{
+  font-size:13px;font-weight:500;
+  color:var(--w2);
+  padding:8px 16px;border-radius:6px;
+  transition:color .2s,background .2s;
+}
+.nav-links a:hover{color:var(--w);background:rgba(255,255,255,.05)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-badge{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:500;
+  color:var(--w2);
+  padding:6px 12px;
+  border:1px solid var(--border2);
+  border-radius:20px;
+}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.nav-cta{
+  font-size:13px;font-weight:600;
+  color:var(--bg);
+  background:var(--gold);
+  padding:9px 22px;
+  border-radius:6px;
+  transition:background .2s,transform .15s,box-shadow .2s;
+}
+.nav-cta:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 4px 20px rgba(201,150,58,.35)}
+
+/* ── PAGE ── */
+.page-wrap{
+  display:grid;
+  grid-template-columns:1fr;
+  min-height:100vh;
+  align-items:start;
   position:relative;
 }
-/* connecting line */
-.proc-steps::before{
-  content:'';position:absolute;
-  top:28px;left:calc(12.5% + 16px);right:calc(12.5% + 16px);
-  height:1px;
-  background:linear-gradient(90deg,var(--v),var(--mg));
-  opacity:.3;
-}
-.ps{
-  padding:0 28px 0;
-  display:flex;flex-direction:column;align-items:center;text-align:center;
+.page-main{min-width:0}
+
+/* ── HERO ── */
+.hero{
+  padding:140px 64px 100px;
+  min-height:calc(100vh - 64px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
   position:relative;
+  overflow:hidden;
+  background:linear-gradient(160deg,#040404 0%,#070606 30%,#080706 55%,#060504 80%,#040404 100%);
 }
-.ps-icon{
-  width:56px;height:56px;
-  background:var(--glass2);
-  border:1px solid var(--gb2);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--ox);font-size:18px;font-weight:700;
-  color:var(--v2);
-  margin-bottom:24px;
+/* gradient orb bg */
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 80%, rgba(201,150,58,.07) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 40% at 20% 60%, rgba(160,100,20,.05) 0%,transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(220,140,40,.04) 0%,transparent 50%);
+  pointer-events:none;z-index:0;
+}
+/* 3D glass shapes */
+.hero::after{
+  content:'';
+  position:absolute;bottom:-30px;left:50%;
+  transform:translateX(-50%) perspective(700px) rotateX(52deg);
+  width:800px;height:180px;
+  background:linear-gradient(180deg,rgba(201,150,58,.09) 0%,rgba(10,8,2,.8) 100%);
+  border:1px solid rgba(201,150,58,.2);
+  border-radius:20px 20px 0 0;
+  box-shadow:0 -8px 40px rgba(201,150,58,.06);
+  pointer-events:none;z-index:0;
+}
+
+.hero-content{
   position:relative;z-index:1;
-  backdrop-filter:blur(10px);
-  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
-  transition:all .3s;
+  max-width:860px;
+  display:flex;flex-direction:column;align-items:center;
 }
-.ps:hover .ps-icon{
-  background:linear-gradient(135deg,var(--v),var(--mg));
-  color:#fff;
-  box-shadow:0 0 24px rgba(124,58,237,.5);
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid var(--goldb);
+  background:var(--goldf);
+  padding:6px 14px;border-radius:20px;
+  margin-bottom:32px;width:fit-content;
 }
-.ps-num{
-  font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;
-  color:var(--v2);margin-bottom:10px;
+.hero-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.hero-h1{
+  font-family:var(--syne);
+  font-size:clamp(2.8rem,7vw,7rem);
+  font-weight:800;
+  line-height:1.08;
+  letter-spacing:-.03em;
+  color:var(--w);
+  margin-bottom:24px;
+  text-align:center;
 }
-.ps-title{
-  font-family:var(--ox);font-size:15px;font-weight:600;
+.hero-h1 em{color:var(--gold);font-style:normal;-webkit-text-fill-color:var(--gold)}
+.hero-h1 span{
+  display:block;
+  background:linear-gradient(135deg, var(--gold) 0%, var(--gold2) 50%, #f0d090 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub-desc{font-size:17px;font-weight:300;line-height:1.75;color:rgba(255,255,255,.65);max-width:580px;margin:0 auto 48px;text-align:center}
+.hero-desc{
+  font-size:18px;font-weight:300;line-height:2;
+  color:var(--w2);
+  max-width:480px;margin-bottom:48px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn-primary{
+  font-size:15px;font-weight:600;
+  color:var(--bg);background:var(--gold);
+  padding:16px 40px;border-radius:10px;
+  display:flex;align-items:center;gap:10px;
+  transition:background .2s,transform .15s,box-shadow .2s;
+}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,150,58,.4)}
+.btn-secondary{
+  font-size:15px;font-weight:500;
+  color:var(--w2);
+  padding:15px 36px;border-radius:10px;
+  border:1px solid var(--border2);
+  transition:border-color .2s,color .2s,background .2s;
+}
+.btn-secondary:hover{border-color:var(--goldb);color:var(--w);background:var(--goldf)}
+.hero-note{
+  font-size:12px;color:var(--w3);
+  display:flex;align-items:center;gap:6px;
+  margin-top:20px;
+}
+.hero-note::before{content:'✓';color:var(--gold)}
+
+/* ── HERO BULLETS ── */
+.hero-bullets{display:none}
+.hero-bullet{
+  font-size:20px;font-weight:500;color:var(--w);
+  display:flex;align-items:center;gap:10px;
+}
+.hero-bullet::before{content:'';display:none}
+.btn-lg{padding:18px 40px !important;font-size:16px !important}
+
+/* ── FLOATING DISCORD ── */
+.float-btn{
+  position:fixed;bottom:32px;right:32px;
+  z-index:500;
+  display:flex;align-items:center;gap:10px;
+  font-size:14px;font-weight:700;
+  color:var(--bg);background:var(--gold);
+  padding:14px 28px;border-radius:50px;
+  box-shadow:0 8px 32px rgba(201,150,58,.4);
+  transition:transform .2s,box-shadow .2s;
+  cursor:pointer;border:none;font-family:var(--inter);
+}
+.float-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,150,58,.5)}
+
+/* ── DIVIDER ── */
+.div{height:1px;background:var(--border);}
+
+/* ── SECTION ── */
+.sec{padding:120px 80px;position:relative;}
+.sec-label{
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--gold)}
+.sec-h{
+  font-family:var(--syne);
+  font-size:clamp(2.2rem,4vw,3.2rem);
+  font-weight:800;letter-spacing:-.03em;
+  color:var(--w);margin-bottom:20px;line-height:1.1;
+}
+.sec-p{
+  font-size:17px;font-weight:300;line-height:2;
+  color:var(--w2);max-width:500px;margin-bottom:56px;
+}
+
+/* ── SERVICE CARDS ── */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border)}
+.svc-card{
+  background:var(--bg1);
+  padding:40px;
+  display:flex;flex-direction:column;
+  transition:background .25s;
+  position:relative;overflow:hidden;
+}
+.svc-card::after{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.svc-card:hover{background:var(--bg2)}
+.svc-card:hover::after{opacity:1}
+.svc-num{
+  font-family:var(--syne);
+  font-size:11px;font-weight:700;letter-spacing:.15em;
+  color:var(--w3);margin-bottom:24px;
+}
+.svc-icon{color:var(--gold);
+  width:44px;height:44px;
+  border-radius:10px;
+  background:var(--goldf);
+  border:1px solid var(--goldb);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;margin-bottom:24px;
+}
+.svc-name{
+  font-family:var(--syne);
+  font-size:1.7rem;font-weight:700;letter-spacing:-.02em;
   color:var(--w);margin-bottom:10px;
 }
-.ps-desc{font-size:14px;color:var(--w2);line-height:1.75;font-weight:300}
+.svc-sub{
+  font-size:13px;font-weight:500;letter-spacing:.02em;
+  color:var(--gold);margin-bottom:16px;
+}
+.svc-desc{
+  font-size:16px;font-weight:300;line-height:1.95;
+  color:var(--w2);flex:1;margin-bottom:32px;
+}
+.svc-foot{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:24px;border-top:1px solid var(--border);margin-top:auto;
+}
+.svc-price{font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--w3)}
+.svc-cta{
+  font-size:13px;font-weight:600;
+  color:var(--gold);
+  display:flex;align-items:center;gap:6px;
+  transition:gap .2s;
+}
+.svc-card:hover .svc-cta{gap:10px}
 
-/* ── 고객후기 ── */
-.rev-section{
-  position:relative;z-index:1;padding:80px 40px;
+/* ── PROCESS ── */
+.proc-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--border);
 }
-.rev-content{
-  display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;
+.ps{
+  background:var(--bg1);
+  padding:36px 28px;
+  position:relative;
+  transition:background .2s;
 }
-.rev-l{}
-.rev-status-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--v2);
-  background:var(--vb);
-  border:1px solid rgba(124,58,237,.3);
-  padding:6px 14px;
+.ps:hover{background:var(--bg2)}
+.ps-num{
+  font-family:var(--syne);
+  font-size:11px;font-weight:700;letter-spacing:.1em;
+  color:var(--gold);margin-bottom:20px;
+  display:flex;align-items:center;gap:8px;
+}
+.ps-num::after{content:'';flex:1;height:1px;background:var(--goldb)}
+.ps-title{
+  font-family:var(--syne);
+  font-size:1.1rem;font-weight:700;
+  color:var(--w);margin-bottom:12px;
+}
+.ps-desc{font-size:15px;font-weight:300;line-height:1.9;color:var(--w2)}
+
+/* ── TRUST ── */
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.trust-card{
+  background:var(--bg1);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:24px;
+  transition:border-color .2s,background .2s;
+}
+.trust-card:hover{border-color:var(--goldb);background:var(--bg2)}
+.trust-icon{font-size:24px;margin-bottom:14px;color:var(--gold)}
+.trust-title{
+  font-family:var(--syne);
+  font-size:14px;font-weight:700;
+  color:var(--w);margin-bottom:6px;
+}
+.trust-desc{font-size:13px;font-weight:300;line-height:1.7;color:var(--w2)}
+
+/* ── REVIEWS ── */
+.rev-box{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:64px;
+  text-align:center;
+  background:var(--bg1);
+}
+.rev-tag{
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid var(--goldb);
+  background:var(--goldf);
+  display:inline-block;padding:6px 16px;border-radius:20px;
   margin-bottom:24px;
 }
-.rev-status-badge::before{
-  content:'';width:5px;height:5px;background:var(--v2);border-radius:50%;
-  box-shadow:0 0 6px var(--v2);
-  animation:glow-v 1.8s infinite;
+.rev-h{
+  font-family:var(--syne);
+  font-size:clamp(1.5rem,3vw,2.5rem);
+  font-weight:800;letter-spacing:-.03em;
+  color:var(--w);margin-bottom:12px;
 }
-.rev-title{
-  font-family:var(--ox);font-size:clamp(28px,3.5vw,44px);
-  font-weight:700;color:var(--w);line-height:1.05;
-  letter-spacing:-1px;margin-bottom:16px;
+.rev-h em{color:var(--gold);font-style:normal}
+.rev-p{font-size:16px;font-weight:300;line-height:1.95;color:var(--w2);max-width:400px;margin:0 auto 40px}
+.rev-slots{display:flex;gap:12px;justify-content:center}
+.rslot{
+  width:180px;padding:16px;
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:8px;
+  display:flex;flex-direction:column;gap:8px;
 }
-.rev-title em{
-  font-style:normal;
-  background:linear-gradient(90deg,var(--v2),var(--mg));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.rev-sub{font-size:16px;color:var(--w2);line-height:1.85;font-weight:300}
-
-.rev-r{
-  display:grid;grid-template-columns:1fr 1fr;gap:12px;
-}
-.rev-slot{
-  background:var(--glass);border:1px solid var(--gb);
-  backdrop-filter:blur(12px);padding:20px;
-  transition:all .25s;
-  position:relative;overflow:hidden;
-}
-.rev-slot:hover{background:var(--vb);border-color:rgba(124,58,237,.3)}
-.rs-id{
-  font-family:var(--mono);font-size:8px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--dim);margin-bottom:14px;
-  display:flex;align-items:center;gap:6px;
-}
-.rs-id::before{content:'//';color:var(--v2)}
-.rs-avt{
-  width:28px;height:28px;
-  background:var(--glass2);border:1px solid var(--gb2);
-  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
-  margin-bottom:12px;
-}
-.rs-lines{display:flex;flex-direction:column;gap:6px}
-.rs-line{height:6px;background:var(--glass2);border-radius:1px}
-.rs-line.s{width:55%}
+.rb{height:6px;background:var(--bg3);border-radius:3px}
+.rb.s{width:55%}
 
 /* ── CTA ── */
-.cta-section{
+.cta-sec{position:relative;
+  padding:96px 64px;
   position:relative;z-index:1;
-  padding:100px 40px;
-  text-align:center;overflow:hidden;
+  overflow:hidden;
 }
-.cta-glow{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:800px;height:400px;
-  background:radial-gradient(ellipse,rgba(124,58,237,.15) 0%,transparent 70%);
+.cta-inner{
+  background:linear-gradient(135deg, var(--bg2) 0%, rgba(201,150,58,.08) 100%);
+  border:1px solid var(--goldb);
+  border-radius:20px;
+  padding:64px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-inner::before{
+  content:'';position:absolute;
+  top:-100px;left:50%;transform:translateX(-50%);
+  width:400px;height:400px;
+  background:radial-gradient(circle, rgba(201,150,58,.08) 0%, transparent 70%);
   pointer-events:none;
 }
-.cta-eyebrow{
-  font-family:var(--mono);font-size:10px;letter-spacing:4px;text-transform:uppercase;
-  color:var(--v2);margin-bottom:20px;
-  position:relative;z-index:1;
+.cta-h{
+  font-family:var(--syne);
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:800;letter-spacing:-.03em;
+  color:var(--w);margin-bottom:12px;position:relative;
 }
-.cta-title{
-  font-family:var(--ox);font-size:clamp(40px,6vw,80px);
-  font-weight:700;letter-spacing:-2px;line-height:1;
-  background:linear-gradient(160deg,#fff 0%,rgba(159,92,247,.9) 60%,rgba(224,64,251,.8) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  margin-bottom:48px;position:relative;z-index:1;
+.cta-p{font-size:15px;font-weight:300;color:var(--w2);margin-bottom:40px;position:relative}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+
+
+/* ── REVIEWS ── */
+.rev-form-wrap{
+  background:var(--bg1);border:1px solid var(--border);border-radius:16px;
+  overflow:hidden;margin-bottom:24px;
 }
-.cta-btns{
-  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
-  position:relative;z-index:1;
+.rev-form-head{
+  padding:20px 32px;border-bottom:1px solid var(--border);
+  font-family:var(--syne);font-size:14px;font-weight:700;color:var(--w);
 }
-.cta-btn{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  font-family:var(--ox);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  padding:15px 36px;transition:all .2s;
+.rev-form-body{padding:28px 32px;display:flex;flex-direction:column;gap:20px}
+.rev-field{display:flex;flex-direction:column;gap:8px}
+.rev-label{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--w3)}
+.rev-input{
+  background:var(--bg2);border:1px solid var(--border2);border-radius:8px;
+  padding:12px 16px;color:var(--w);font-family:var(--inter);font-size:14px;
+  outline:none;transition:border-color .2s;
 }
-.cta-btn.disc{
-  background:#5865f2;color:#fff;
-  box-shadow:0 4px 20px rgba(88,101,242,.3);
+.rev-input:focus{border-color:var(--goldb)}
+.rev-input::placeholder{color:var(--w3)}
+.rev-textarea{resize:vertical;min-height:100px}
+.star-picker{display:flex;gap:6px}
+.star{font-size:28px;color:var(--w3);cursor:pointer;transition:color .15s;user-select:none}
+.star.active{color:var(--gold)}
+.rev-submit{
+  font-size:14px;font-weight:600;color:var(--bg);
+  background:var(--gold);padding:13px 28px;border-radius:8px;
+  width:fit-content;transition:background .2s,transform .15s;
+  cursor:pointer;border:none;font-family:var(--inter);
 }
-.cta-btn.disc:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(88,101,242,.5)}
-.cta-btn.kkt{background:#fee500;color:#3c1e1e}
-.cta-btn.kkt:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(254,229,0,.3)}
+.rev-submit:hover{background:var(--gold2);transform:translateY(-1px)}
+.rev-msg{font-size:13px;font-weight:500;display:none}
+.rev-msg.ok{color:#22c55e;display:block}
+.rev-msg.err{color:#ef4444;display:block}
+.rev-list{display:flex;flex-direction:column;gap:12px}
+.rev-card{
+  background:var(--bg1);border:1px solid var(--border);border-radius:12px;
+  padding:24px 28px;
+}
+.rev-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.rev-card-name{font-family:var(--syne);font-size:15px;font-weight:700;color:var(--w)}
+.rev-card-date{font-size:11px;color:var(--w3)}
+.rev-card-stars{color:var(--gold);font-size:16px;letter-spacing:2px;margin-bottom:10px}
+.rev-card-content{font-size:16px;font-weight:300;line-height:1.9;color:var(--w2)}
+.rev-empty{
+  text-align:center;padding:48px;
+  border:1px solid var(--border);border-radius:12px;
+  font-size:14px;color:var(--w3);
+}
 
 /* ── FOOTER ── */
-footer{
-  position:relative;z-index:1;
-  border-top:1px solid var(--gb);
-  padding:28px 40px;
-  display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;
-  background:rgba(6,5,15,.8);backdrop-filter:blur(20px);
+footer{position:relative;
+  padding:32px 64px;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  position:relative;
 }
-.foot-brand{display:flex;align-items:center;gap:8px;font-family:var(--ox);font-size:16px;font-weight:600}
-.foot-copy{font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:.5px;text-align:center}
-.foot-links{display:flex;gap:20px;list-style:none;justify-content:flex-end}
-.foot-links a{
-  font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--dim);transition:color .15s;
+.foot-brand{
+  font-family:var(--syne);font-size:15px;font-weight:800;
+  letter-spacing:-.02em;color:var(--w2);
+  display:flex;align-items:center;gap:8px;
 }
-.foot-links a:hover{color:var(--v2)}
+.foot-brand em{color:var(--gold);font-style:normal}
+.foot-copy{font-size:12px;font-weight:400;color:var(--w3)}
+
+
+/* ── FLOATING GAME CARD ── */
+
+
+
+/* ── FLOATING GAME CARD ── */
+
+
+
+/* ── HERO GAME CARD ── */
+.hero-game-card{
+  background:var(--bg1);
+  border:1px solid var(--goldb);
+  border-radius:16px;
+  padding:20px;
+  display:flex;flex-direction:column;gap:12px;
+  align-self:center;
+}
+.hgc-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--w3)}
+.hgc-game{display:flex;align-items:center;gap:12px;cursor:pointer;transition:opacity .2s}
+.hgc-game:hover{opacity:.8}
+.hgc-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--goldf);border:1px solid var(--goldb);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);flex-shrink:0;
+}
+.hgc-name{font-family:var(--syne);font-size:13px;font-weight:700;color:var(--w);margin-bottom:3px}
+.hgc-tag{font-size:11px;color:var(--w2)}
+.hgc-hot{font-size:9px;font-weight:600;letter-spacing:.05em;padding:3px 10px;background:var(--goldf);border:1px solid var(--goldb);color:var(--gold);border-radius:10px;width:fit-content}
+.hgc-btn{font-size:12px;font-weight:600;color:var(--bg);background:var(--gold);padding:11px;border-radius:8px;border:none;cursor:pointer;font-family:var(--inter);transition:background .2s;text-align:center;width:100%}
+.hgc-btn:hover{background:var(--gold2)}
+@media(max-width:960px){.hero{grid-template-columns:1fr !important}.hero-game-card{display:none}}
+
+
+/* ── FLOATING GAME CARD ── */
+.float-game{
+  position:fixed;top:50%;right:24px;
+  transform:translateY(-50%);
+  z-index:500;
+  background:var(--bg1);
+  border:1px solid var(--goldb);
+  border-radius:16px;
+  padding:16px;
+  width:200px;
+  box-shadow:0 8px 32px rgba(0,0,0,.6);
+  display:flex;flex-direction:column;gap:12px;
+}
+.fg-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--w3)}
+.fg-game{display:flex;align-items:center;gap:10px;cursor:pointer;transition:opacity .2s}
+.fg-game:hover{opacity:.8}
+.fg-icon{width:36px;height:36px;border-radius:8px;background:var(--goldf);border:1px solid var(--goldb);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold)}
+.fg-name{font-family:var(--syne);font-size:13px;font-weight:700;color:var(--w);margin-bottom:3px}
+.fg-tag{font-size:11px;color:var(--w2)}
+.fg-hot{font-size:9px;font-weight:600;letter-spacing:.05em;padding:3px 10px;background:var(--goldf);border:1px solid var(--goldb);color:var(--gold);border-radius:10px;width:fit-content}
+.fg-btn{font-size:12px;font-weight:600;color:var(--bg);background:var(--gold);padding:11px;border-radius:8px;border:none;cursor:pointer;font-family:var(--inter);transition:background .2s;width:100%}
+.fg-btn:hover{background:var(--gold2)}
+@media(max-width:1200px){.float-game{display:none}}
 
 /* ── MODAL ── */
-.mo{
-  position:fixed;inset:0;
-  background:rgba(6,5,15,.88);backdrop-filter:blur(20px);
-  z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;
-}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
 .mo.open{opacity:1;pointer-events:all}
 .gm{
   position:fixed;top:0;right:0;
-  width:min(540px,100vw);height:100vh;
+  width:min(520px,100vw);height:100vh;
   background:var(--bg1);
-  border-left:1px solid var(--gb2);
+  border-left:1px solid var(--border2);
   z-index:201;display:flex;flex-direction:column;
   transform:translateX(100%);
   transition:transform .4s cubic-bezier(.16,1,.3,1);
 }
 .gm.open{transform:translateX(0)}
 .gm-h{
-  padding:28px 32px 24px;border-bottom:1px solid var(--gb);
-  background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(224,64,251,.08));
-  display:flex;justify-content:space-between;align-items:flex-start;flex-shrink:0;
+  padding:28px 32px 24px;
+  border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:flex-start;
+  flex-shrink:0;
 }
 .gm-tag{
-  font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;
-  color:var(--v2);margin-bottom:8px;
+  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;
 }
 .gm-ttl{
-  font-family:var(--ox);font-size:26px;font-weight:700;
-  background:linear-gradient(90deg,var(--w),var(--w2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  line-height:1;
+  font-family:var(--syne);
+  font-size:1.5rem;font-weight:800;letter-spacing:-.02em;
+  color:var(--w);line-height:1.1;
 }
 .gm-x{
-  background:var(--glass2);border:1px solid var(--gb2);
-  color:var(--dim);width:34px;height:34px;font-size:15px;
-  flex-shrink:0;transition:all .15s;
+  background:var(--bg2);border:1px solid var(--border2);
+  border-radius:8px;color:var(--w2);
+  width:32px;height:32px;font-size:14px;
+  transition:all .15s;flex-shrink:0;
 }
-.gm-x:hover{border-color:var(--v);color:var(--v2)}
+.gm-x:hover{border-color:var(--goldb);color:var(--gold)}
 .gm-b{flex:1;overflow-y:auto;padding:28px 32px}
 .gm-b::-webkit-scrollbar{width:3px}
-.gm-b::-webkit-scrollbar-thumb{background:var(--v)}
-.gm-desc{font-size:15px;color:var(--w2);line-height:1.9;padding-bottom:24px;border-bottom:1px solid var(--gb);margin-bottom:22px;font-weight:300}
+.gm-b::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+.gm-desc{font-size:14px;font-weight:300;color:var(--w2);line-height:1.85;padding-bottom:24px;border-bottom:1px solid var(--border);margin-bottom:24px}
 .gm-sl{
-  font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;
-  color:var(--v2);margin-bottom:12px;
-  display:flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--w3);margin-bottom:14px;
 }
-.gm-sl::after{content:'';flex:1;height:1px;background:var(--gb2)}
-.gm-svcs{border:1px solid var(--gb);margin-bottom:22px;background:var(--glass)}
-.gm-sr{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid var(--gb);transition:background .15s}
-.gm-sr:last-child{border-bottom:none}
-.gm-sr:hover{background:var(--vb)}
-.gm-sn{font-weight:500;font-size:17px;color:var(--w);letter-spacing:.2px;font-family:var(--ox)}
-.gm-ss{font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:3px;letter-spacing:.3px}
-.gm-st{
-  font-family:var(--mono);font-size:11px;letter-spacing:1px;flex-shrink:0;
-  background:linear-gradient(90deg,var(--v2),var(--mg));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;font-weight:500;
+.gm-svcs{display:flex;flex-direction:column;gap:2px;margin-bottom:24px}
+.gm-sr{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 16px;background:var(--bg2);border-radius:8px;
+  transition:background .15s;
 }
+.gm-sr:hover{background:var(--bg3)}
+.gm-sn{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--w);margin-bottom:3px}
+.gm-ss{font-size:12px;font-weight:300;color:var(--w3)}
+.gm-st{font-size:12px;font-weight:600;color:var(--gold);flex-shrink:0}
 .gm-hg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.gm-hi{background:var(--glass);border:1px solid var(--gb);padding:14px;transition:border-color .2s}
-.gm-hi:hover{border-color:rgba(124,58,237,.4)}
-.gm-hi-ic{font-size:17px;margin-bottom:7px}
-.gm-hi-t{font-family:var(--ox);font-weight:600;font-size:12px;color:var(--w);margin-bottom:4px}
-.gm-hi-d{font-family:var(--mono);font-size:10px;color:var(--dim);line-height:1.55;letter-spacing:.3px}
-.gm-f{padding:20px 32px;border-top:1px solid var(--gb);background:var(--bg);flex-shrink:0}
-.gm-fn{font-family:var(--mono);font-size:10px;color:var(--dim);margin-bottom:11px;letter-spacing:.5px}
+.gm-hi{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;transition:border-color .2s}
+.gm-hi:hover{border-color:var(--goldb)}
+.gm-hi-ic{font-size:18px;margin-bottom:8px}
+.gm-hi-t{font-family:var(--syne);font-size:13px;font-weight:700;color:var(--w);margin-bottom:4px}
+.gm-hi-d{font-size:12px;font-weight:300;color:var(--w3);line-height:1.5}
+.gm-f{padding:20px 32px;border-top:1px solid var(--border);background:var(--bg);flex-shrink:0}
+.gm-fn{font-size:12px;font-weight:300;color:var(--w3);margin-bottom:12px}
 .gm-db{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;font-family:var(--ox);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  padding:13px;color:#fff;
-  background:linear-gradient(135deg,#7c3aed,#9f5cf7);
-  transition:opacity .2s;
+  display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+  font-size:14px;font-weight:600;
+  padding:14px;color:var(--bg);background:var(--gold);border-radius:8px;
+  transition:background .2s,transform .15s;
 }
-.gm-db:hover{opacity:.85}
+.gm-db:hover{background:var(--gold2);transform:translateY(-1px)}
 
 /* ── REVEAL ── */
-.fade{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
 .fade.show{opacity:1;transform:translateY(0)}
 
-/* ── HERO GAME LIST ── */
-.hero-gamelist{
-  width:100%;
-  background:var(--glass2);
-  border:1px solid var(--gb2);
-  backdrop-filter:blur(20px);
-  overflow:hidden;
-}
-.hgl-head{
-  padding:16px 28px;
-  border-bottom:1px solid var(--gb2);
-  display:flex;justify-content:space-between;align-items:center;
-  background:rgba(124,58,237,.12);
-}
-.hgl-label{
-  font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;
-  color:var(--v2);
-}
-.hgl-count{
-  font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:1px;
-}
-.hgl-item{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:22px 28px;
-  border-bottom:1px solid var(--gb);
-  cursor:pointer;
-  transition:background .2s,padding-left .2s;
-  position:relative;overflow:hidden;
-}
-.hgl-item::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:0;
-  background:linear-gradient(90deg,var(--v),var(--mg));
-  transition:width .25s;
-}
-.hgl-item:hover{background:rgba(124,58,237,0.08);padding-left:36px}
-.hgl-item:hover::before{width:3px}
-.hgl-item:last-of-type{border-bottom:none}
-.hgl-left{display:flex;flex-direction:column;gap:6px;position:relative;z-index:1}
-.hgl-name{
-  font-family:var(--ox);font-weight:600;font-size:20px;
-  color:#fff;letter-spacing:.3px;
-  transition:color .2s;
-}
-.hgl-item:hover .hgl-name{
-  background:linear-gradient(90deg,var(--v2),var(--mg));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.hgl-tags{
-  font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--w2);
-}
-.hgl-right{
-  display:flex;align-items:center;gap:10px;
-  position:relative;z-index:1;
-}
-.hgl-badge{
-  font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
-  padding:4px 10px;
-  background:linear-gradient(135deg,var(--v),var(--mg));color:#fff;
-}
-.hgl-badge.new{background:linear-gradient(135deg,#0ea5e9,#06b6d4)}
-.hgl-arr{
-  font-family:var(--mono);font-size:20px;color:var(--w2);
-  transition:all .2s;
-}
-.hgl-item:hover .hgl-arr{color:var(--v2);transform:translateX(4px)}
-.hgl-foot{
-  padding:18px 28px;
-  background:rgba(124,58,237,.06);
-  font-family:var(--mono);font-size:12px;color:var(--w2);letter-spacing:.5px;
-  border-top:1px solid var(--gb);
-}
-
 /* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .page-layout{grid-template-columns:1fr}
-  .page-sidebar{display:none}
-  nav{padding:0 16px}
+@media(max-width:960px){
+  .page-wrap{grid-template-columns:1fr}
+  nav{padding:0 20px}
   .nav-links{display:none}
-  .hero{padding:90px 20px 48px}
-  .hero-left{align-items:center;text-align:center}
-  .hero-left .hero-desc{text-align:center}
-  .hero-left .hero-actions{justify-content:center}
-  .stats-strip{grid-template-columns:1fr 1fr}
-  .stat-cell:nth-child(2n){border-right:none}
-  .stat-cell:nth-child(-n+2){border-bottom:1px solid var(--gb)}
-  .section,.proc-section,.rev-section,.cta-section{padding:56px 20px}
+  .hero{padding:100px 24px 56px}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(3){border-top:1px solid var(--border)}
+  .stat:nth-child(4){border-top:1px solid var(--border);border-right:none}
+  .sec{padding:56px 24px}
   .svc-grid{grid-template-columns:1fr}
-  .svc-card.featured{grid-column:span 1}
-  .proc-steps{grid-template-columns:1fr 1fr;gap:32px}
-  .proc-steps::before{display:none}
-  .rev-content{grid-template-columns:1fr}
-  .rev-r{grid-template-columns:1fr 1fr}
-  footer{padding:20px 16px;grid-template-columns:1fr;gap:14px;text-align:center}
-  .foot-links{justify-content:center}
+  .proc-grid{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .cta-sec{position:relative;padding:40px 24px}
+  .cta-inner{padding:40px 24px}
+  footer{position:relative;padding:24px;flex-direction:column;gap:12px;text-align:center}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="brand">
-    <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#9f5cf7"/>
-          <stop offset="100%" stop-color="#e040fb"/>
-        </linearGradient>
-      </defs>
-      <path d="M18 2 L34 18 L18 34 L2 18 Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/>
-      <path d="M11 22 L18 14 L25 22" stroke="url(#lg1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M11 27 L18 19 L25 27" stroke="url(#lg1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.4"/>
-    </svg>
-    <div class="brand-name">부주<em>마켓</em></div>
+    <div class="brand-dot"></div>
+    부주<em>마켓</em>
   </div>
   <div class="nav-links">
     <a href="#svc">서비스</a>
     <a href="#proc">진행방식</a>
+    <a href="#trust">왜 저희인가</a>
     <a href="#rev">후기</a>
   </div>
   <div class="nav-right">
-    <div class="nav-status"><span class="ns-dot"></span>운영중</div>
-    <button class="nav-btn"><span>문의하기 →</span></button>
+    <div class="nav-badge"><span class="badge-dot"></span>운영중</div>
+    <button class="nav-cta" id="navCta">문의하기 →</button>
   </div>
 </nav>
 
-<!-- PAGE LAYOUT -->
-<div class="page-layout">
+<div class="page-wrap">
 <div class="page-main">
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-chip"><span class="chip-dot"></span>전문 대리 서비스</div>
-    <h1 class="hero-title">부주마켓</h1>
-    <p class="hero-sub">최고 랭크 달성의 지름길</p>
-    <p class="hero-desc">
-      검증된 <strong>챌린저급 부스터</strong>만 운영합니다.<br>
-      빠른 완료 · 노출 방지 · <strong>24/7 실시간 지원.</strong><br>
-      목표 달성 실패 시 전액 환불 보장합니다.
-    </p>
-    <div class="hero-actions">
-      <button class="btn-v" onclick="document.getElementById('svc').scrollIntoView({behavior:'smooth'})"><span>서비스 보기 →</span></button>
-      <button class="btn-g" onclick="document.getElementById('proc').scrollIntoView({behavior:'smooth'})">진행방식 보기</button>
+  <div class="hero-content">
+    <h1 class="hero-h1">부주<em>마켓</em></h1>
+    <div class="hero-bullets" style="display:flex;flex-direction:column;gap:14px;margin-bottom:48px;text-align:left">
+      <div class="hero-bullet">✓ 신속한 서비스 시작</div>
+      <div class="hero-bullet">✓ 100% 완료 보장</div>
+      <div class="hero-bullet">✓ 24/7 운영중</div>
     </div>
-  </div>
-
-  <div class="hero-right-panel">
-    <!-- Game list panel -->
-    <div class="hero-gamelist fade" style="transition-delay:.1s">
-      <div class="hgl-head">
-        <span class="hgl-label">지원 게임 / 지원 게임</span>
-        <span class="hgl-count">05</span>
-      </div>
-      <div class="hgl-item sb-game-btn" data-game="lol">
-        <div class="hgl-left">
-          <span class="hgl-name">리그 오브 레전드</span>
-          <span class="hgl-tags">솔로 · 듀오 · 배치고사 · 챔피언</span>
-        </div>
-        <div class="hgl-right"><span class="hgl-badge">HOT</span><span class="hgl-arr">→</span></div>
-      </div>
-      <div class="hgl-item sb-game-btn" data-game="val">
-        <div class="hgl-left">
-          <span class="hgl-name">발로란트</span>
-          <span class="hgl-tags">랭크 · 배치고사 · 에이전트 지정</span>
-        </div>
-        <div class="hgl-right"><span class="hgl-badge">HOT</span><span class="hgl-arr">→</span></div>
-      </div>
-      <div class="hgl-item sb-game-btn" data-game="ow">
-        <div class="hgl-left">
-          <span class="hgl-name">오버워치 2</span>
-          <span class="hgl-tags">랭크 · 역할 지정</span>
-        </div>
-        <div class="hgl-right"><span class="hgl-badge new">NEW</span><span class="hgl-arr">→</span></div>
-      </div>
-      <div class="hgl-item sb-game-btn" data-game="tft">
-        <div class="hgl-left">
-          <span class="hgl-name">TFT</span>
-          <span class="hgl-tags">랭크 · 배치고사</span>
-        </div>
-        <div class="hgl-right"><span class="hgl-arr">→</span></div>
-      </div>
-      <div class="hgl-item sb-game-btn" data-game="pubg">
-        <div class="hgl-left">
-          <span class="hgl-name">배틀그라운드</span>
-          <span class="hgl-tags">랭크 · KDA 향상</span>
-        </div>
-        <div class="hgl-right"><span class="hgl-arr">→</span></div>
-      </div>
-      <div class="hgl-foot">
-        <span class="hgl-foot-note">가격 문의는 디스코드에서 빠르게 답변드립니다</span>
-      </div>
+    <div class="hero-actions" style="justify-content:center">
+      <button class="btn-primary btn-lg" id="heroCta">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M15.25 1.19A14.9 14.9 0 0011.57.5a.06.06 0 00-.06.03c-.16.28-.33.65-.46.94a13.77 13.77 0 00-4.1 0A9.57 9.57 0 006.49.53a.06.06 0 00-.06-.03A14.86 14.86 0 002.75 1.19a.05.05 0 00-.03.02C.4 4.64-.24 7.97.07 11.26a.07.07 0 00.03.05 14.96 14.96 0 004.5 2.27.06.06 0 00.07-.02c.35-.47.66-.97.92-1.49a.06.06 0 00-.03-.08 9.85 9.85 0 01-1.41-.67.06.06 0 010-.1l.28-.22a.06.06 0 01.06 0c2.96 1.35 6.16 1.35 9.09 0a.06.06 0 01.06.01l.28.22a.06.06 0 010 .1 9.27 9.27 0 01-1.41.67.06.06 0 00-.04.08c.28.52.58 1.02.92 1.49a.06.06 0 00.07.02 14.9 14.9 0 004.51-2.27.06.06 0 00.03-.05c.37-3.8-.62-7.1-2.63-10.05a.04.04 0 00-.02-.02zM6.01 9.25c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.71 1.8-1.61 1.8zm5.98 0c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.7 1.8-1.61 1.8z" fill="currentColor"/></svg>
+        디스코드 문의하기
+      </button>
+      <button class="btn-secondary btn-lg" id="heroKkt"><svg width="20" height="20" viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="#FAE100"/><path d="M24 10C15.16 10 8 15.82 8 23c0 4.5 2.7 8.47 6.77 10.83l-1.4 5.13a.5.5 0 0 0 .74.58l6.3-3.9c1.16.17 2.35.26 3.59.26 8.84 0 16-5.82 16-13S32.84 10 24 10z" fill="#3C1E1E"/><text x="24" y="28" font-family="Arial Black,sans-serif" font-size="11" font-weight="900" fill="#FAE100" text-anchor="middle">TALK</text></svg> 카카오톡 문의</button>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-strip fade">
-  <div class="stat-cell"><div class="sc-val">30<em>분</em></div><div class="sc-label">평균 시작 대기</div></div>
-  <div class="stat-cell"><div class="sc-val">24<em>/7</em></div><div class="sc-label">실시간 지원</div></div>
-  <div class="stat-cell"><div class="sc-val">100<em>%</em></div><div class="sc-label">완료 보장</div></div>
-  <div class="stat-cell"><div class="sc-val">리니지<em>+</em></div><div class="sc-label">전문 플레이어</div></div>
-</div>
+<div class="div"></div>
 
 <!-- 서비스 -->
-<section class="section" id="svc">
-  <div class="section-head fade">
-    <div class="sh-l">
-      <div class="sh-eyebrow">서비스</div>
-      <h2 class="sh-title">서비스 목록</h2>
-    </div>
-    <div class="sh-r">가격 문의<br>디스코드 / 카카오톡</div>
-  </div>
+<section class="sec" id="svc">
+  <div class="sec-label fade">서비스</div>
+  <h2 class="sec-h fade">제공 서비스</h2>
+  <p class="sec-p fade">정확한 가격은 디스코드 또는 카카오톡으로 문의해 주세요.</p>
   <div class="svc-grid">
-    <div class="svc-card featured fade">
-      <div class="sc-tag" style="background:rgba(124,58,237,.15);color:#b07ef7;border-color:rgba(124,58,237,.3)">리니지 클래식</div>
-      <div class="svc-name">레벨 부스팅 <span class="svc-pop">인기</span></div>
-      <div class="svc-sub">원하는 레벨까지 · 숙련된 고수 플레이어 직접 진행</div>
+    <div class="svc-card fade">
+      <div class="svc-num">01</div>
+      <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/></svg></div>
+      <div class="svc-name">레벨 부스팅</div>
+      <div class="svc-sub">원하는 레벨까지 · 고수 직접 진행</div>
       <p class="svc-desc">리니지 클래식 전문 플레이어가 직접 캐릭터를 빠르고 안전하게 원하는 레벨까지 올려드립니다. 계정 보안 철저 준수, 실시간 카카오톡 업데이트 제공.</p>
-      <div class="svc-footer"><span class="sf-time">협의</span><span class="sf-price inq">문의</span></div>
+      <div class="svc-foot">
+        
+        <button class="svc-cta" onclick="window.open('https://discord.gg/KWE8qMgrj6','_blank')">문의하기 →</button>
+      </div>
     </div>
-    <div class="svc-card fade" style="transition-delay:.08s">
-      <div class="sc-tag" style="background:rgba(124,58,237,.15);color:#b07ef7;border-color:rgba(124,58,237,.3)">리니지 클래식</div>
+    <div class="svc-card fade" style="transition-delay:.1s">
+      <div class="svc-num">02</div>
+      <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="8" rx="8" ry="3"/><path d="M4 8v4c0 1.66 3.58 3 8 3s8-1.34 8-3V8"/><path d="M4 12v4c0 1.66 3.58 3 8 3s8-1.34 8-3v-4"/></svg></div>
       <div class="svc-name">아데나 파밍</div>
       <div class="svc-sub">대량 아데나 획득 · 빠른 자금 확보</div>
-      <p class="svc-desc">게임 내 재화인 아데나를 효율적으로 대량 파밍해드립니다. 목표 수량 달성까지 안전하게 진행, 미달 시 무료 재진행 보장.</p>
-      <div class="svc-footer"><span class="sf-time">협의</span><span class="sf-price inq">문의</span></div>
+      <p class="svc-desc">게임 내 재화인 아데나를 효율적으로 대량 파밍해드립니다. 목표 수량 달성까지 안전하게 진행하며, 미달 시 무료 재진행 보장.</p>
+      <div class="svc-foot">
+        
+        <button class="svc-cta" onclick="window.open('https://discord.gg/KWE8qMgrj6','_blank')">문의하기 →</button>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="div"></div>
 
 <!-- 진행방식 -->
-<section class="proc-section" id="proc">
-  <div class="section-head fade">
-    <div class="sh-l">
-      <div class="sh-eyebrow">진행방식</div>
-      <h2 class="sh-title">진행 방식</h2>
+<section class="sec" id="proc">
+  <div class="sec-label fade">진행방식</div>
+  <h2 class="sec-h fade">이렇게 진행됩니다</h2>
+  <p class="sec-p fade">평균 30분 이내 시작. 빠르고 투명하게.</p>
+  <div class="proc-grid fade">
+    <div class="ps">
+      <div class="ps-num">STEP 01</div>
+      <div class="ps-title">서비스 문의</div>
+      <p class="ps-desc">디스코드 또는 카카오톡으로 원하는 서비스와 캐릭터 정보를 알려주세요.</p>
     </div>
-    <div class="sh-r">평균 시작 대기<br>30분 이내</div>
-  </div>
-  <div class="proc-steps">
-    <div class="ps fade" style="transition-delay:.05s">
-      <div class="ps-icon">01</div>
-      <div class="ps-num">1단계</div>
-      <div class="ps-title">주문 접수</div>
-      <p class="ps-desc">디스코드 또는 카카오톡으로 서비스와 현재 티어를 알려주세요.</p>
-    </div>
-    <div class="ps fade" style="transition-delay:.12s">
-      <div class="ps-icon">02</div>
-      <div class="ps-num">2단계</div>
+    <div class="ps">
+      <div class="ps-num">STEP 02</div>
       <div class="ps-title">견적 및 결제</div>
-      <p class="ps-desc">빠른 견적 후 안전하게 결제. 카카오페이 가능.</p>
+      <p class="ps-desc">빠른 견적 확인 후 안전하게 결제. 카카오페이 가능.</p>
     </div>
-    <div class="ps fade" style="transition-delay:.19s">
-      <div class="ps-icon">03</div>
-      <div class="ps-num">3단계</div>
-      <div class="ps-title">부스터 배정</div>
-      <p class="ps-desc">최상위 부스터 즉시 배정. 30분 이내 시작.</p>
+    <div class="ps">
+      <div class="ps-num">STEP 03</div>
+      <div class="ps-title">전문가 배정</div>
+      <p class="ps-desc">리니지 클래식 전문 플레이어 즉시 배정. 30분 이내 시작.</p>
     </div>
-    <div class="ps fade" style="transition-delay:.26s">
-      <div class="ps-icon">04</div>
-      <div class="ps-num">4단계</div>
+    <div class="ps">
+      <div class="ps-num">STEP 04</div>
       <div class="ps-title">완료 알림</div>
-      <p class="ps-desc">목표 달성 즉시 알림. 미달 시 환불 보장.</p>
+      <p class="ps-desc">목표 달성 즉시 알림 전송. 미달 시 무료 재진행 100% 보장.</p>
     </div>
   </div>
 </section>
 
-<!-- 고객후기 -->
-<section class="rev-section" id="rev">
-  <div class="section-head fade">
-    <div class="sh-l">
-      <div class="sh-eyebrow">고객후기</div>
-      <h2 class="sh-title">고객 후기</h2>
+<div class="div"></div>
+
+<!-- 신뢰 -->
+<section class="sec" id="trust">
+  <div class="sec-label fade">왜 저희인가</div>
+  <h2 class="sec-h fade">믿을 수 있는 이유</h2>
+  <p class="sec-p fade">부주마켓이 선택받는 이유입니다.</p>
+  <div class="trust-grid fade">
+    <div class="trust-card">
+      <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="trust-title">계정 보안 철저</div>
+      <p class="trust-desc">고객 계정 정보는 철저하게 보호됩니다. 노출 위험 없이 안전하게 진행.</p>
     </div>
-    <div class="sh-r">실제 이용 고객만<br>작성 가능</div>
+    <div class="trust-card">
+      <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="trust-title">빠른 시작</div>
+      <p class="trust-desc">결제 완료 후 평균 30분 이내 전문 플레이어 배정 및 시작.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="trust-title">실시간 소통</div>
+      <p class="trust-desc">진행 상황을 카카오톡 또는 디스코드로 실시간 업데이트해드립니다.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="trust-title">완료 보장</div>
+      <p class="trust-desc">목표 미달성 시 무료 재진행을 100% 보장합니다.</p>
+    </div>
   </div>
-  <div class="rev-content fade">
-    <div class="rev-l">
-      <div class="rev-status-badge">수집 중</div>
-      <h3 class="rev-title">아직 후기가<br><em>없습니다.</em></h3>
-      <p class="rev-sub">첫 번째 고객이 되어주세요. 서비스 이용 후 솔직한 후기를 남겨주시면 여기에 표시됩니다.</p>
-    </div>
-    <div class="rev-r">
-      <div class="rev-slot"><div class="rs-id">대기중 · 001</div><div class="rs-avt"></div><div class="rs-lines"><div class="rs-line"></div><div class="rs-line s"></div></div></div>
-      <div class="rev-slot"><div class="rs-id">대기중 · 002</div><div class="rs-avt"></div><div class="rs-lines"><div class="rs-line"></div><div class="rs-line s"></div></div></div>
-      <div class="rev-slot"><div class="rs-id">대기중 · 003</div><div class="rs-avt"></div><div class="rs-lines"><div class="rs-line"></div><div class="rs-line s"></div></div></div>
-      <div class="rev-slot"><div class="rs-id">대기중 · 004</div><div class="rs-avt"></div><div class="rs-lines"><div class="rs-line"></div><div class="rs-line s"></div></div></div>
+</section>
+
+<div class="div"></div>
+
+<!-- 후기 -->
+<section class="sec" id="rev">
+  <div class="sec-label fade">고객 후기</div>
+  <h2 class="sec-h fade">고객 후기</h2>
+  <p class="sec-p fade">서비스를 이용하신 분들의 솔직한 후기입니다.</p>
+
+  <!-- REVIEW FORM -->
+  <div class="rev-form-wrap fade">
+    <div class="rev-form-head">후기 작성</div>
+    <div class="rev-form-body">
+      <div class="rev-field">
+        <label class="rev-label">닉네임</label>
+        <input type="text" id="rev-name" class="rev-input" placeholder="닉네임을 입력하세요">
+      </div>
+      <div class="rev-field">
+        <label class="rev-label">별점</label>
+        <div class="star-picker" id="star-picker">
+          <span class="star" data-val="1">★</span>
+          <span class="star" data-val="2">★</span>
+          <span class="star" data-val="3">★</span>
+          <span class="star" data-val="4">★</span>
+          <span class="star" data-val="5">★</span>
+        </div>
+      </div>
+      <div class="rev-field">
+        <label class="rev-label">후기 내용</label>
+        <textarea id="rev-content" class="rev-input rev-textarea" placeholder="서비스 이용 후기를 작성해 주세요..."></textarea>
+      </div>
+      <div id="rev-msg" class="rev-msg"></div>
+      <button class="rev-submit" id="rev-submit">후기 등록하기 →</button>
     </div>
   </div>
+
+  <!-- REVIEW LIST -->
+  <div id="rev-list" class="rev-list"></div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section fade">
-  <div class="cta-glow"></div>
-  <div class="cta-eyebrow">지금 시작하세요</div>
-  <h2 class="cta-title">랭크업 준비 되셨나요?</h2>
-  <div class="cta-btns">
-    <button class="cta-btn disc">
-      <svg width="14" height="11" viewBox="0 0 18 14" fill="none"><path d="M15.25 1.19A14.9 14.9 0 0011.57.5a.06.06 0 00-.06.03c-.16.28-.33.65-.46.94a13.77 13.77 0 00-4.1 0A9.57 9.57 0 006.49.53a.06.06 0 00-.06-.03A14.86 14.86 0 002.75 1.19a.05.05 0 00-.03.02C.4 4.64-.24 7.97.07 11.26a.07.07 0 00.03.05 14.96 14.96 0 004.5 2.27.06.06 0 00.07-.02c.35-.47.66-.97.92-1.49a.06.06 0 00-.03-.08 9.85 9.85 0 01-1.41-.67.06.06 0 010-.1l.28-.22a.06.06 0 01.06 0c2.96 1.35 6.16 1.35 9.09 0a.06.06 0 01.06.01l.28.22a.06.06 0 010 .1 9.27 9.27 0 01-1.41.67.06.06 0 00-.04.08c.28.52.58 1.02.92 1.49a.06.06 0 00.07.02 14.9 14.9 0 004.51-2.27.06.06 0 00.03-.05c.37-3.8-.62-7.1-2.63-10.05a.04.04 0 00-.02-.02zM6.01 9.25c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.71 1.8-1.61 1.8zm5.98 0c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.7 1.8-1.61 1.8z" fill="currentColor"/></svg>
-      디스코드 문의
-    </button>
-    <button class="cta-btn kkt">💬 카카오톡</button>
+<section class="cta-sec">
+  <div class="cta-inner fade">
+    <h2 class="cta-h">지금 바로 시작하세요</h2>
+    <p class="cta-p">디스코드 또는 카카오톡으로 빠르게 문의하세요. 평균 30분 이내 시작.</p>
+    <div class="cta-btns">
+      <button class="btn-primary" id="ctaDisc">
+        <svg width="16" height="13" viewBox="0 0 18 14" fill="none"><path d="M15.25 1.19A14.9 14.9 0 0011.57.5a.06.06 0 00-.06.03c-.16.28-.33.65-.46.94a13.77 13.77 0 00-4.1 0A9.57 9.57 0 006.49.53a.06.06 0 00-.06-.03A14.86 14.86 0 002.75 1.19a.05.05 0 00-.03.02C.4 4.64-.24 7.97.07 11.26a.07.07 0 00.03.05 14.96 14.96 0 004.5 2.27.06.06 0 00.07-.02c.35-.47.66-.97.92-1.49a.06.06 0 00-.03-.08 9.85 9.85 0 01-1.41-.67.06.06 0 010-.1l.28-.22a.06.06 0 01.06 0c2.96 1.35 6.16 1.35 9.09 0a.06.06 0 01.06.01l.28.22a.06.06 0 010 .1 9.27 9.27 0 01-1.41.67.06.06 0 00-.04.08c.28.52.58 1.02.92 1.49a.06.06 0 00.07.02 14.9 14.9 0 004.51-2.27.06.06 0 00.03-.05c.37-3.8-.62-7.1-2.63-10.05a.04.04 0 00-.02-.02zM6.01 9.25c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.71 1.8-1.61 1.8zm5.98 0c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.7 1.8-1.61 1.8z" fill="currentColor"/></svg>
+        디스코드 문의
+      </button>
+      <button class="btn-secondary" id="ctaKkt"><svg width="20" height="20" viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="#FAE100"/><path d="M24 10C15.16 10 8 15.82 8 23c0 4.5 2.7 8.47 6.77 10.83l-1.4 5.13a.5.5 0 0 0 .74.58l6.3-3.9c1.16.17 2.35.26 3.59.26 8.84 0 16-5.82 16-13S32.84 10 24 10z" fill="#3C1E1E"/><text x="24" y="28" font-family="Arial Black,sans-serif" font-size="11" font-weight="900" fill="#FAE100" text-anchor="middle">TALK</text></svg> 카카오톡 문의</button>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="foot-brand">
-    <svg width="22" height="22" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.5">
-      <path d="M18 2 L34 18 L18 34 L2 18 Z" stroke="#9f5cf7" stroke-width="1.5" fill="none"/>
-      <path d="M11 22 L18 14 L25 22" stroke="#9f5cf7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M11 27 L18 19 L25 27" stroke="#9f5cf7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.5"/>
-    </svg>
-    부주마켓
-  </div>
-  <div class="foot-copy">© 2026 부주마켓 · 전문 대리 서비스</div>
-  <ul class="foot-links">
-    <li><a href="#">이용약관</a></li><li><a href="#">개인정보</a></li>
-    <li><a href="#">디스코드</a></li><li><a href="#">카카오톡</a></li>
-  </ul>
+  <div class="foot-brand"><div class="brand-dot"></div>부주<em>마켓</em></div>
+  <div class="foot-copy">© 2026 부주마켓 · 리니지 클래식 전문 대리 서비스</div>
 </footer>
-
-</div><!-- end page-main -->
-
-<!-- STICKY SIDEBAR -->
-<div class="page-sidebar">
-  <div class="hero-gamelist">
-    <div class="hgl-head">
-      <span class="hgl-label">지원 게임</span>
-      <span class="hgl-count">01</span>
-    </div>
-    <div class="hgl-item sb-game-btn" data-game="lineage">
-      <div class="hgl-left"><span class="hgl-name">리니지 클래식</span><span class="hgl-tags">레벨 부스팅 · 아데나 파밍 · 아이템 파밍 · 공성전</span></div>
-      <div class="hgl-right"><span class="hgl-badge">HOT</span><span class="hgl-arr">→</span></div>
-    </div>
-    <div class="hgl-foot">
-      <span class="hgl-foot-note">가격 문의는 디스코드에서 빠르게 답변드립니다</span>
-      <button class="btn-disc" style="margin-top:12px">
-        <span>
-          <svg width="14" height="11" viewBox="0 0 18 14" fill="none"><path d="M15.25 1.19A14.9 14.9 0 0011.57.5a.06.06 0 00-.06.03c-.16.28-.33.65-.46.94a13.77 13.77 0 00-4.1 0A9.57 9.57 0 006.49.53a.06.06 0 00-.06-.03A14.86 14.86 0 002.75 1.19a.05.05 0 00-.03.02C.4 4.64-.24 7.97.07 11.26a.07.07 0 00.03.05 14.96 14.96 0 004.5 2.27.06.06 0 00.07-.02c.35-.47.66-.97.92-1.49a.06.06 0 00-.03-.08 9.85 9.85 0 01-1.41-.67.06.06 0 010-.1l.28-.22a.06.06 0 01.06 0c2.96 1.35 6.16 1.35 9.09 0a.06.06 0 01.06.01l.28.22a.06.06 0 010 .1 9.27 9.27 0 01-1.41.67.06.06 0 00-.04.08c.28.52.58 1.02.92 1.49a.06.06 0 00.07.02 14.9 14.9 0 004.51-2.27.06.06 0 00.03-.05c.37-3.8-.62-7.1-2.63-10.05a.04.04 0 00-.02-.02zM6.01 9.25c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.71 1.8-1.61 1.8zm5.98 0c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.7 1.8-1.61 1.8z" fill="currentColor"/></svg>
-          디스코드 참여하기
-        </span>
-      </button>
-    </div>
-  </div>
 </div>
 
-</div><!-- end page-layout -->
+</div>
+</div>
 
 <!-- MODAL -->
 <div class="mo" id="mo"></div>
 <div class="gm" id="gm">
   <div class="gm-h">
-    <div><div class="gm-tag" id="gmTag">게임</div><div class="gm-ttl" id="gmTtl">—</div></div>
+    <div>
+      <div class="gm-tag">리니지 클래식</div>
+      <div class="gm-ttl">리니지 클래식<br>(1998)</div>
+    </div>
     <button class="gm-x" id="gmX">✕</button>
   </div>
-  <div class="gm-b" id="gmB"></div>
+  <div class="gm-b">
+    <p class="gm-desc">리니지 클래식 전문 대리 서비스. 숙련된 고수 플레이어가 직접 진행. 안전하고 빠른 결과 보장.</p>
+    <div class="gm-sl">제공 서비스</div>
+    <div class="gm-svcs">
+      <div class="gm-sr"><div><div class="gm-sn">레벨 부스팅</div><div class="gm-ss">원하는 레벨까지</div></div></div>
+      <div class="gm-sr"><div><div class="gm-sn">아데나 파밍</div><div class="gm-ss">대량 아데나 획득</div></div></div>
+    </div>
+    <div class="gm-sl" style="margin-top:8px">주요 특징</div>
+    <div class="gm-hg">
+      <div class="gm-hi"><div class="gm-hi-ic" style="color:var(--gold)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/></svg></div><div class="gm-hi-t">숙련 플레이어</div><div class="gm-hi-d">리니지 전문 고수</div></div>
+      <div class="gm-hi"><div class="gm-hi-ic" style="color:var(--gold)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="gm-hi-t">계정 안전</div><div class="gm-hi-d">보안 철저 준수</div></div>
+      <div class="gm-hi"><div class="gm-hi-ic" style="color:var(--gold)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="gm-hi-t">실시간 소통</div><div class="gm-hi-d">카카오톡 업데이트</div></div>
+      <div class="gm-hi"><div class="gm-hi-ic" style="color:var(--gold)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="gm-hi-t">완료 보장</div><div class="gm-hi-d">미달 시 무료 재진행</div></div>
+    </div>
+  </div>
   <div class="gm-f">
-    <div class="gm-fn">▸ 정확한 가격은 디스코드에서 문의하세요</div>
-    <button class="gm-db">
+    <div class="gm-fn">정확한 가격은 디스코드에서 문의해 주세요</div>
+    <button class="gm-db" id="gmDisc">
       <svg width="14" height="11" viewBox="0 0 18 14" fill="none"><path d="M15.25 1.19A14.9 14.9 0 0011.57.5a.06.06 0 00-.06.03c-.16.28-.33.65-.46.94a13.77 13.77 0 00-4.1 0A9.57 9.57 0 006.49.53a.06.06 0 00-.06-.03A14.86 14.86 0 002.75 1.19a.05.05 0 00-.03.02C.4 4.64-.24 7.97.07 11.26a.07.07 0 00.03.05 14.96 14.96 0 004.5 2.27.06.06 0 00.07-.02c.35-.47.66-.97.92-1.49a.06.06 0 00-.03-.08 9.85 9.85 0 01-1.41-.67.06.06 0 010-.1l.28-.22a.06.06 0 01.06 0c2.96 1.35 6.16 1.35 9.09 0a.06.06 0 01.06.01l.28.22a.06.06 0 010 .1 9.27 9.27 0 01-1.41.67.06.06 0 00-.04.08c.28.52.58 1.02.92 1.49a.06.06 0 00.07.02 14.9 14.9 0 004.51-2.27.06.06 0 00.03-.05c.37-3.8-.62-7.1-2.63-10.05a.04.04 0 00-.02-.02zM6.01 9.25c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.71 1.8-1.61 1.8zm5.98 0c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.7 1.8-1.61 1.8z" fill="currentColor"/></svg>
       디스코드 참여하기
     </button>
@@ -1039,34 +866,167 @@ footer{
 </div>
 
 <script>
-// ← 여기에 디스코드 링크를 넣으세요
-const DISCORD_URL = 'https://discord.gg/KWE8qMgrj6';
-const KAKAO_URL   = 'https://open.kakao.com/여기에링크';
+const DISCORD_URL='https://discord.gg/KWE8qMgrj6';
+const KAKAO_URL='https://open.kakao.com/여기에링크';
 
-// 모든 디스코드/카카오 버튼 연결
-document.querySelectorAll('.btn-disc, .cta-btn.disc, .gm-db').forEach(btn => {
-  btn.addEventListener('click', () => window.open(DISCORD_URL, '_blank'));
-});
-document.querySelectorAll('.cta-btn.kkt').forEach(btn => {
-  btn.addEventListener('click', () => window.open(KAKAO_URL, '_blank'));
-});
-document.querySelectorAll('a[href="#"]').forEach(a => {
-  const text = a.textContent.trim();
-  if(text === '디스코드') a.href = DISCORD_URL, a.target = '_blank';
-  if(text === '카카오톡') a.href = KAKAO_URL, a.target = '_blank';
-});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
-document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-const gd={
-  lineage:{tag:'리니지 클래식',ttl:'리니지 클래식 (1998)',desc:'리니지 클래식 전문 대리 서비스. 숙련된 고수 플레이어가 직접 진행. 안전하고 빠른 결과 보장.',svcs:[{n:'레벨 부스팅',s:'원하는 레벨까지',t:'협의'},{n:'아데나 파밍',s:'대량 아데나 획득',t:'협의'},{n:'아이템 파밍',s:'희귀 아이템 사냥',t:'협의'},{n:'공성전 지원',s:'혈맹 공성전 참여',t:'협의'}],hls:[{i:'⚔️',t:'숙련 플레이어',d:'리니지 전문 고수'},{i:'🛡',t:'계정 안전',d:'보안 철저 준수'},{i:'💬',t:'실시간 소통',d:'카카오톡 업데이트'},{i:'↩',t:'완료 보장',d:'미달 시 무료 재진행'}]}
-};
-const mo=document.getElementById('mo'),gm=document.getElementById('gm');
-function openM(k){const d=gd[k];if(!d)return;document.getElementById('gmTag').textContent=d.tag;document.getElementById('gmTtl').textContent=d.ttl;document.getElementById('gmB').innerHTML=`<p class="gm-desc">${d.desc}</p><div class="gm-sl">제공 서비스</div><div class="gm-svcs">${d.svcs.map(s=>`<div class="gm-sr"><div><div class="gm-sn">${s.n}</div><div class="gm-ss">${s.s}</div></div><div class="gm-st">${s.t}</div></div>`).join('')}</div><div class="gm-sl" style="margin-top:22px">주요 특징</div><div class="gm-hg">${d.hls.map(h=>`<div class="gm-hi"><div class="gm-hi-ic">${h.i}</div><div class="gm-hi-t">${h.t}</div><div class="gm-hi-d">${h.d}</div></div>`).join('')}</div>`;mo.classList.add('open');gm.classList.add('open');document.body.style.overflow='hidden';}
-function closeM(){mo.classList.remove('open');gm.classList.remove('open');document.body.style.overflow='';}
-document.querySelectorAll('.sb-game-btn').forEach(el=>el.addEventListener('click',()=>openM(el.dataset.game)));
-document.getElementById('gmX').addEventListener('click',closeM);
-mo.addEventListener('click',closeM);
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+document.addEventListener('DOMContentLoaded', function(){
+
+  // ── DISCORD / KAKAO BUTTONS ──
+  ['navCta','heroCta','ctaDisc','gmDisc'].forEach(id=>{
+    document.getElementById(id)?.addEventListener('click',()=>window.open(DISCORD_URL,'_blank'));
+  });
+  ['heroKkt','ctaKkt'].forEach(id=>{
+    document.getElementById(id)?.addEventListener('click',()=>window.open(KAKAO_URL,'_blank'));
+  });
+
+  // ── MODAL ──
+  const mo=document.getElementById('mo'), gm=document.getElementById('gm');
+  function openM(){
+    mo.classList.add('open');
+    gm.classList.add('open');
+    document.body.style.overflow='hidden';
+    document.getElementById('floatGame').style.display='none';
+    document.getElementById('floatDisc').style.display='none';
+  }
+  function closeM(){
+    mo.classList.remove('open');
+    gm.classList.remove('open');
+    document.body.style.overflow='';
+    document.getElementById('floatGame').style.display='';
+    document.getElementById('floatDisc').style.display='';
+  }
+  document.getElementById('gmX')?.addEventListener('click', closeM);
+  mo.addEventListener('click', closeM);
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeM(); });
+
+  // ── FLOATING GAME CARD ──
+  document.getElementById('floatGame')?.addEventListener('click', function(e){
+    if(!e.target.closest('#fgBtn')) openM();
+  });
+  document.getElementById('fgBtn')?.addEventListener('click', function(e){
+    e.stopPropagation();
+    window.open(DISCORD_URL,'_blank');
+  });
+  document.getElementById('floatDisc')?.addEventListener('click',()=>window.open(DISCORD_URL,'_blank'));
+
+  // ── SCROLL REVEAL ──
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show');
+  }),{threshold:.08});
+  document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+  // ── REVIEW SYSTEM ──
+  const SB_URL='https://ohnasvgwzmknzujtqrzt.supabase.co';
+  const SB_KEY='sb_publishable_4SIyWn_YkqMnxTbuoyBxFA_SlvWLXms';
+  const SB_HEADERS={
+    'apikey':SB_KEY,
+    'Authorization':'Bearer '+SB_KEY,
+    'Content-Type':'application/json'
+  };
+  let selectedRating=0;
+
+  document.querySelectorAll('.star').forEach(star=>{
+    star.addEventListener('mouseover',()=>{
+      const val=+star.dataset.val;
+      document.querySelectorAll('.star').forEach(s=>s.classList.toggle('active',+s.dataset.val<=val));
+    });
+    star.addEventListener('mouseout',()=>{
+      document.querySelectorAll('.star').forEach(s=>s.classList.toggle('active',+s.dataset.val<=selectedRating));
+    });
+    star.addEventListener('click',()=>{
+      selectedRating=+star.dataset.val;
+      document.querySelectorAll('.star').forEach(s=>s.classList.toggle('active',+s.dataset.val<=selectedRating));
+    });
+  });
+
+  async function loadReviews(){
+    try{
+      const res=await fetch(SB_URL+'/rest/v1/reviews?select=*&order=created_at.desc',{headers:SB_HEADERS});
+      const data=await res.json();
+      const list=document.getElementById('rev-list');
+      if(!list) return;
+      if(!data.length){
+        list.innerHTML='<div class="rev-empty">아직 후기가 없습니다. 첫 번째 후기를 남겨주세요!</div>';
+        return;
+      }
+      list.innerHTML=data.map(r=>{
+        const stars='★'.repeat(r.Rating||r.rating||0)+'☆'.repeat(5-(r.Rating||r.rating||0));
+        const date=new Date(r.created_at).toLocaleDateString('ko-KR');
+        return `<div class="rev-card">
+          <div class="rev-card-top">
+            <div class="rev-card-name">${r.Name||r.name}</div>
+            <div class="rev-card-date">${date}</div>
+          </div>
+          <div class="rev-card-stars">${stars}</div>
+          <div class="rev-card-content">${r.Content||r.content}</div>
+        </div>`;
+      }).join('');
+    }catch(e){ console.error('Failed to load reviews:',e); }
+  }
+
+  document.getElementById('rev-submit')?.addEventListener('click', async()=>{
+    const name=document.getElementById('rev-name')?.value.trim();
+    const txt=document.getElementById('rev-content')?.value.trim();
+    const msg=document.getElementById('rev-msg');
+    if(!name||!txt||selectedRating===0){
+      msg.textContent='닉네임, 별점, 후기 내용을 모두 입력해 주세요.';
+      msg.className='rev-msg err';
+      return;
+    }
+    const btn=document.getElementById('rev-submit');
+    btn.textContent='등록 중...'; btn.disabled=true;
+    try{
+      const res=await fetch(SB_URL+'/rest/v1/reviews',{
+        method:'POST',
+        headers:{...SB_HEADERS,'Prefer':'return=minimal'},
+        body:JSON.stringify({Name:name,Rating:selectedRating,Content:txt})
+      });
+      if(res.ok||res.status===201){
+        msg.textContent='후기가 등록되었습니다! 감사합니다 😊';
+        msg.className='rev-msg ok';
+        document.getElementById('rev-name').value='';
+        document.getElementById('rev-content').value='';
+        selectedRating=0;
+        document.querySelectorAll('.star').forEach(s=>s.classList.remove('active'));
+        loadReviews();
+      } else {
+        const err=await res.json();
+        msg.textContent='등록 실패: '+(err.message||res.status);
+        msg.className='rev-msg err';
+      }
+    }catch(e){
+      msg.textContent='오류가 발생했습니다. 다시 시도해 주세요.';
+      msg.className='rev-msg err';
+    }
+    btn.textContent='후기 등록하기 →'; btn.disabled=false;
+  });
+
+  loadReviews();
+
+}); // end DOMContentLoaded
 </script>
+
+<!-- FLOATING GAME CARD -->
+<div class="float-game" id="floatGame">
+  <div class="fg-label">지원 게임</div>
+  <div class="fg-game">
+    <div class="fg-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/></svg>
+    </div>
+    <div>
+      <div class="fg-name">리니지 클래식</div>
+      <div class="fg-tag">레벨 · 아데나</div>
+    </div>
+  </div>
+  <div class="fg-hot">HOT</div>
+  <button class="fg-btn" id="fgBtn">디스코드 문의</button>
+</div>
+
+<!-- FLOATING DISCORD BUTTON -->
+<button class="float-btn" id="floatDisc">
+  <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M15.25 1.19A14.9 14.9 0 0011.57.5a.06.06 0 00-.06.03c-.16.28-.33.65-.46.94a13.77 13.77 0 00-4.1 0A9.57 9.57 0 006.49.53a.06.06 0 00-.06-.03A14.86 14.86 0 002.75 1.19a.05.05 0 00-.03.02C.4 4.64-.24 7.97.07 11.26a.07.07 0 00.03.05 14.96 14.96 0 004.5 2.27.06.06 0 00.07-.02c.35-.47.66-.97.92-1.49a.06.06 0 00-.03-.08 9.85 9.85 0 01-1.41-.67.06.06 0 010-.1l.28-.22a.06.06 0 01.06 0c2.96 1.35 6.16 1.35 9.09 0a.06.06 0 01.06.01l.28.22a.06.06 0 010 .1 9.27 9.27 0 01-1.41.67.06.06 0 00-.04.08c.28.52.58 1.02.92 1.49a.06.06 0 00.07.02 14.9 14.9 0 004.51-2.27.06.06 0 00.03-.05c.37-3.8-.62-7.1-2.63-10.05a.04.04 0 00-.02-.02zM6.01 9.25c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.71 1.8-1.61 1.8zm5.98 0c-.88 0-1.61-.81-1.61-1.8s.71-1.8 1.61-1.8c.91 0 1.63.82 1.61 1.8 0 .99-.7 1.8-1.61 1.8z" fill="currentColor"/></svg>
+  디스코드 문의하기
+</button>
+
 </body>
 </html>
